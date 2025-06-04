@@ -22,7 +22,7 @@ body {
     border-radius: 20px;
 }
 
-.introduction, .portrait{
+.introduction, .portrait {
     max-height: 479px;
 }
 
@@ -30,8 +30,13 @@ body {
     max-height: 351px;    
 }
 
-.left-section, .right-section{
-    max-height: 854px;
+.portrait{
+    background-image: url(../../assets/images/JuliaHuangImg.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.personal-section, .projects-section{
     background-color: none;
 }
 
@@ -39,53 +44,92 @@ body {
     display: grid;
     gap: 24px;
     margin: 24px;
-    grid-template:
+    /* grid-template:
         "header" 100px      
-        "left-section"
-        "right-section";
+        "personal-section"
+        "projects-section";
+
+        @media (min-width:992px){
+            
+            grid-template: 
+            "header header" 100px
+            "personal-section projects-section" 850px
+            
+        } */
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px 5fr;
 
     .header{
-        grid-area: header;
+        /* grid-area: header; */
+        height: 100px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        grid-row: 1;
+        grid-column: 1/13;
     }
-    .left-section{
-        grid-area: left-section;
+    .personal-section{
+        /* grid-area: personal-section; */
+        display: grid;   
+        grid-row: 2;
+        grid-column: 1/9;     
+    }
+    .projects-section{
+        /* grid-area: projects-section; */
+        grid-row: 2;
+        grid-column: 9/13;
         display: grid;
         gap: 24px
     }
-    .right-section{
-        grid-area: right-section;
-        display: grid;
-        gap: 24px
-    }
-
-        @media (min-width:992px){
-            grid-template: 
-            "header header" 100px
-            "left-section right-section" 850px
-        }
 }
 
-/* .left-section{
+.personal-section{
+    gap: 24px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 2fr 1fr;
+    width: 100%;
+    max-height: 854px;
+    
+    .introduction{
+        max-height: 100%;
+        grid-row: 1;
+        grid-column: 1 / 9;
+    }
 
-} */
+    .portrait{
+        max-height: 100%;
+        grid-row: 1;
+        grid-column: 9 / 13;
+    }
 
-.right-section{
-    grid-template:
-    "works"
-    "socials"
-    ;
+    .about{
+        max-height: 100%;
+        grid-row: 2;
+        grid-column: 1 / 7;
+    }
+
+    .contact{
+        max-height: 100%;
+        grid-row: 2;
+        grid-column: 7 / 13;
+    }
+}
+
+.projects-section{
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: 1;
+    width: 100%;
+    max-width: 100%;    
+    max-height: 100%;
+
     .works{
-        grid-area: works;
-        min-height: 700px;
-        max-height: 726px;
+        grid-row: 1 / 11;
+        grid-column: 1;
     }
     .socials{
-        grid-area: socials;
-        max-height: 101px;
+        grid-row: 11 / 13;
+        grid-column: 1;
     }
 }
 
@@ -102,4 +146,31 @@ body {
         font-size: 25px;
         line-height: 30px;   
     } 
+}
+
+/* ajustes especificos */
+.works{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+    gap: 0px;
+}
+
+.works > .item-1, .item-2, .item-3  {        
+    padding-bottom: 20px;
+    border-bottom: 2px solid #F8AFA6;
+}
+
+.works div {
+    padding-top: 20px;
+    display: grid; 
+}
+
+.project-photo{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
 }
