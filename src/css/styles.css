@@ -18,7 +18,6 @@ body {
 .grid-container > .header, .portrait, .socials, .contact, .works, .about, .introduction{
     background-color: #FADCD9;
     min-height: 100px;
-    padding: 20px;
     border-radius: 20px;
 }
 
@@ -152,20 +151,30 @@ body {
 .works{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     overflow: hidden;
-    gap: 0px;
+    gap: 24px;
+
+    div{
+        align-content: center;
+        padding-bottom: 20px;
+        margin: 0 20px;
+    }
+
+    .item-1{
+        padding-bottom: 41px;
+        padding-top: 10px;        
+    }
 }
 
-.works > .item-1, .item-2, .item-3  {        
-    padding-bottom: 20px;
+.works > .item-1, .item-2, .item-3  {
     border-bottom: 2px solid #F8AFA6;
+    height: max-content;
 }
-
+/*
 .works div {
     padding-top: 20px;
     display: grid; 
-}
+} */
 
 .project-photo{
     margin: 0px;
