@@ -4,6 +4,10 @@
     padding: 0;
     text-decoration: none;
     color: black;
+
+    @media (max-width:482px) {
+        font-size: 16px;
+    }
 }
 
 body {
@@ -39,9 +43,14 @@ body {
         justify-content: space-between;
     }
 
-    img{
+    .circleIcon{
+        min-width: 28px;
         max-width: 38px;
-        max-height: 38px;
+    }
+
+    .contactArrow{
+        height: 18px;
+        width: 18px;
     }
 }
 
@@ -49,8 +58,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 18px;
 
     img{
+        min-width: 80px;
         max-width: 120px;
         align-self: flex-end;
     }
@@ -74,6 +85,7 @@ body {
     grid-template-rows: 100px 5fr;
 
     .header{
+        padding: 24px;
         height: 100px;
         display: flex;
         flex-direction: row;
@@ -97,6 +109,7 @@ body {
     @media (max-width:979px) {
         grid-template-rows: 100px 5fr 5fr;
         .header{
+            padding: 24px;
             height: 100px;
             display: flex;
             flex-direction: row;
@@ -176,6 +189,33 @@ body {
             grid-column: 7 / 13;
         }
     }
+
+    @media (max-width:420px) {
+        grid-template-rows: 2fr 2fr 2fr 1fr;
+        .introduction{
+            max-height: 100%;
+            grid-row: 1;
+            grid-column: 1 / 13;
+        }
+
+        .portrait{
+            max-height: 100%;
+            grid-row: 2;
+            grid-column: 1 / 13;
+        }
+
+        .about{
+            max-height: 100%;
+            grid-row: 3;
+            grid-column: 1 / 13;
+        }
+
+        .contact{
+            max-height: 100%;
+            grid-row: 4;
+            grid-column: 1 / 13;
+        }
+    }
 }
 
 .projects-section{
@@ -207,7 +247,14 @@ body {
         font-weight: 300;
         font-size: 25px;
         line-height: 30px;   
-    } 
+    }
+
+    @media (max-width:450px) {
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        height: 110px;
+    }
 }
 
 /* ajustes especificos */
@@ -261,5 +308,20 @@ body {
 
     @media (max-width:979px) {
         max-width: 100%;
+    }
+}
+
+.socials{
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    justify-content: center;
+    align-content: center;
+
+    @media (max-width:450px) {
+        gap: 15px;
+        flex-direction: column;        
+        text-align: center;
     }
 }
